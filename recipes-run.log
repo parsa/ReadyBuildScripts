@@ -1,0 +1,34 @@
+for i in $(ls ./recipes/*.sh); do echo "nohup $i $HOME/.local $(basename ${i/.sh/.txt}) 2>&1 &"; done
+
+Output:
+nohup ./recipes/autoconf-2.69.sh /Users/parsa/.local autoconf-2.69.txt 2>&1 &
+nohup ./recipes/automake-1.14.sh /Users/parsa/.local automake-1.14.txt 2>&1 &
+nohup ./recipes/binutils-2.24.sh /Users/parsa/.local binutils-2.24.txt 2>&1 &
+nohup ./recipes/boost-1.56.sh /Users/parsa/.local boost-1.56.txt 2>&1 &
+nohup ./recipes/cmake-2.8.12.2.sh /Users/parsa/.local cmake-2.8.12.2.txt 2>&1 &
+nohup ./recipes/cmake-3.0.2.sh /Users/parsa/.local cmake-3.0.2.txt 2>&1 &
+nohup ./recipes/curl-7.38.0.sh /Users/parsa/.local curl-7.38.0.txt 2>&1 &
+nohup ./recipes/git-2.1.1.sh /Users/parsa/.local git-2.1.1.txt 2>&1 &
+nohup ./recipes/glibc-2.18.sh /Users/parsa/.local glibc-2.18.txt 2>&1 &
+nohup ./recipes/glibc-2.19.sh /Users/parsa/.local glibc-2.19.txt 2>&1 &
+nohup ./recipes/glibc-2.20.sh /Users/parsa/.local glibc-2.20.txt 2>&1 &
+nohup ./recipes/gperftools-2.2.1.sh /Users/parsa/.local gperftools-2.2.1.txt 2>&1 &
+nohup ./recipes/hdf5-1.8.13.sh /Users/parsa/.local hdf5-1.8.13.txt 2>&1 &
+nohup ./recipes/hwloc-1.9.1.sh /Users/parsa/.local hwloc-1.9.1.txt 2>&1 &
+nohup ./recipes/isl-0.11.1.sh /Users/parsa/.local isl-0.11.1.txt 2>&1 &
+nohup ./recipes/isl-0.12.sh /Users/parsa/.local isl-0.12.txt 2>&1 &
+nohup ./recipes/jemalloc-3.6.0.sh /Users/parsa/.local jemalloc-3.6.0.txt 2>&1 &
+nohup ./recipes/libtool-2.4.sh /Users/parsa/.local libtool-2.4.txt 2>&1 &
+nohup ./recipes/libunwind-1.1.sh /Users/parsa/.local libunwind-1.1.txt 2>&1 &
+nohup ./recipes/m4-1.4.17.sh /Users/parsa/.local m4-1.4.17.txt 2>&1 &
+nohup ./recipes/make-4.0.sh /Users/parsa/.local make-4.0.txt 2>&1 &
+nohup ./recipes/mercurial-3.1.1.sh /Users/parsa/.local mercurial-3.1.1.txt 2>&1 &
+nohup ./recipes/papi-5.3.2.sh /Users/parsa/.local papi-5.3.2.txt 2>&1 &
+nohup ./recipes/perl-5.20.1.sh /Users/parsa/.local perl-5.20.1.txt 2>&1 &
+nohup ./recipes/pip.sh /Users/parsa/.local pip.txt 2>&1 &
+nohup ./recipes/python-2.7.8.sh /Users/parsa/.local python-2.7.8.txt 2>&1 &
+nohup ./recipes/python-3.4.1.sh /Users/parsa/.local python-3.4.1.txt 2>&1 &
+nohup ./recipes/ruby-2.1.3.sh /Users/parsa/.local ruby-2.1.3.txt 2>&1 &
+nohup ./recipes/vim-hg.sh /Users/parsa/.local vim-hg.txt 2>&1 &
+nohup ./recipes/zlib-1.2.8.sh /Users/parsa/.local zlib-1.2.8.txt 2>&1 &
+
