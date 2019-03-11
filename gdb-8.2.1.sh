@@ -9,6 +9,7 @@ export TARBALL_TEXINFO=texinfo-${VERSION_TEXINFO}.tar.xz
 export MIRROR_TEXINFO=https://mirrors.kernel.org/gnu/texinfo
 export URL_TEXINFO=${MIRROR_TEXINFO}/${TARBALL_TEXINFO}
 export URL_TEXINFO_SIG=${MIRROR_TEXINFO}/${TARBALL_TEXINFO}.sig
+export KEYSERVER=keyserver.ubuntu.com  #pgpkeys.uk, keys.gnupg.net
 
 mkdir -p texinfo/{src,build}
 (
@@ -16,7 +17,7 @@ mkdir -p texinfo/{src,build}
     wget $URL_TEXINFO 2>/dev/null || curl -O $URL_TEXINFO
     wget $URL_TEXINFO_SIG 2>/dev/null || curl -O $URL_TEXINFO_SIG
     gpg --list-packets ${TARBALL_TEXINFO}.sig
-    gpg --recv DDBC579DAB37FBA9
+    gpg --keyserver ${KEYSERVER} --recv DDBC579DAB37FBA9
     if ! gpg --verify ${TARBALL_TEXINFO}.sig; then
         echo 'Could not verify the downloaded tarball signature. Abort.' >&2
         exit 1
@@ -45,7 +46,7 @@ mkdir -p gdb/{src,build}
     wget $URL 2>/dev/null || curl -O $URL
     wget $URL_SIG 2>/dev/null || curl -O $URL_SIG
     gpg --list-packets ${TARBALL}.sig
-    gpg --recv 92EDB04BFF325CF3
+    gpg --keyserver ${KEYSERVER} --recv 92EDB04BFF325CF3
     if ! gpg --verify ${TARBALL}.sig; then
         echo 'Could not verify the downloaded tarball signature. Abort.' >&2
         exit 1
