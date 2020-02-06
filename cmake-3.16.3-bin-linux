@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+cd "$( dirname "${BASH_SOURCE[0]}" )"
+
+set -ex
+
+export CMAKE_VERSION=3.16.3
+export TARBALL_NAME=cmake-${CMAKE_VERSION}-Linux-x86_64.sh
+
+[[ ! -d cmake_install ]] && mkdir cmake_install
+
+curl -JLO https://cmake.org/files/v${CMAKE_VERSION%.*}/${TARBALL_NAME}
+sh ./${TARBALL_NAME} --prefix=$PWD/cmake_install --exclude-subdir
+rm -f ./${TARBALL_NAME}
